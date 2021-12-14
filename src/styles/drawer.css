@@ -21,7 +21,6 @@ html {
 }
 
 .indicatorDot {
-  z-index: 1000;
   width: 30px;
   height: 30px;
   background-color: #ffab56;
