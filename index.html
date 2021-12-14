@@ -38,27 +38,17 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">MoCIoT - Niklas Kuder</a>
+          <a class="navbar-brand" onclick="setPage(0)">MoCIoT - Niklas Kuder</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="src/page1.html">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
-          <li><a href="#">Page 3</a></li>
+          <li id="p0-link" class="active"><a onclick="setPage(0)">Home</a></li>
+          <li id="p1-link"><a onclick="setPage(1)">Zeichner</a></li>
+          <li id="p2-link"><a onclick="setPage(2)">Page 2</a></li>
+          <li id="p3-link"><a onclick="setPage(3)">Page 3</a></li>
         </ul>
       </div>
     </nav>
     <div style="margin-bottom: 50px"></div>
-    <h1>Meine Webseite</h1>
-    <div>
-      <button
-        class="btn-success"
-        style="border-radius: 8px"
-        onclick="getLocation()"
-      >
-        Click me!
-      </button>
-    </div>
-    <div id="page-content"></div>
+    <iframe id="page-root" src="src/home.html"></iframe>
   </body>
 </html>
