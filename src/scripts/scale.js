@@ -32,6 +32,8 @@ if (isMobile.any()) {
   document.getElementById("scale-content").style.display = "flex";
 }
 
+const SCALE_TOLERANCE = 10;
+
 var px = 50; // Position x and y
 var py = 50;
 var vx = 0.0; // Velocity x and y
@@ -67,7 +69,12 @@ function orientationListener(event) {
   center = document.getElementById("scaleCenter");
   var rect = center.getBoundingClientRect();
   var dotPos = dot.getBoundingClientRect();
-  if (Math.abs(rect.top - dotPos.top) < 50) {
+  if (
+    Math.abs(rect.top - dotPos.top) < SCALE_TOLERANCE &&
+    Math.abs(rect.right - dotPos.right) < SCALE_TOLERANCE &&
+    Math.abs(rect.bottom - dotPos.bottom) < SCALE_TOLERANCE &&
+    Math.abs(rect.left - dotPos.left) < SCALE_TOLERANCE
+  ) {
     alert(`Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left}`);
   }
 }
