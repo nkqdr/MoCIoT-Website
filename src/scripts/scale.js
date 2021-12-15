@@ -32,7 +32,7 @@ if (isMobile.any()) {
   document.getElementById("scale-content").style.display = "flex";
 }
 
-const SCALE_TOLERANCE = 5;
+const SCALE_TOLERANCE = 20;
 
 var px = 50; // Position x and y
 var py = 50;
@@ -53,14 +53,14 @@ function orientationListener(event) {
 
   // Update position and clip it to bounds
   px = px + vx * 0.2;
-  if (px > 80 || px < 0) {
-    px = Math.max(0, Math.min(80, px)); // Clip px between 0-98
+  if (px > 50 || px < 0) {
+    px = Math.max(0, Math.min(50, px)); // Clip px between 0-98
     vx = 0;
   }
 
   py = py + vy * 0.2;
-  if (py > 80 || py < 0) {
-    py = Math.max(0, Math.min(80, py)); // Clip py between 0-98
+  if (py > 70 || py < 0) {
+    py = Math.max(0, Math.min(70, py)); // Clip py between 0-98
     vy = 0;
   }
 
