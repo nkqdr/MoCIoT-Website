@@ -83,7 +83,7 @@ function getAccel() {
       alert("no accelerometer");
     } else {
       alert("accelerometer found");
-      window.addEventListener("devicemotion", orientationListener, true);
+      window.addEventListener("deviceorientation", orientationListener, true);
     }
   }
 }
