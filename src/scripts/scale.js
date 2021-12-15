@@ -27,14 +27,11 @@ var isMobile = {
     );
   },
 };
-console.log(isMobile.any());
 if (isMobile.any()) {
   document.getElementById("scaleStationTitle").style.display = "none";
   document.getElementById("scale-content").style.display = "block";
-  alert("You're on a mobile device!");
-} else {
-  alert("You're on a desktop!");
 }
+
 var px = 50; // Position x and y
 var py = 50;
 var vx = 0.0; // Velocity x and y
@@ -76,11 +73,13 @@ function getAccel() {
         // Add a listener to get smartphone orientation
         // in the alpha-beta-gamma axes (units in degrees)
         window.addEventListener("deviceorientation", orientationListener);
+      } else {
+        alert("Konnte die Berechtigungen nicht einholen.");
       }
     });
   } else {
     if (window.DeviceMotionEvent == undefined) {
-      alert("no accelerometer");
+      alert("Konnte die Berechtigungen nicht einholen.");
     } else {
       alert("accelerometer found");
       window.addEventListener("deviceorientation", orientationListener, true);
