@@ -30,52 +30,10 @@
       integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
       crossorigin="anonymous"
     ></script>
-    <script>
-      var isMobile = {
-        Android: function () {
-          return navigator.userAgent.match(/Android/i);
-        },
-        BlackBerry: function () {
-          return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function () {
-          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Opera: function () {
-          return navigator.userAgent.match(/Opera Mini/i);
-        },
-        Windows: function () {
-          return (
-            navigator.userAgent.match(/IEMobile/i) ||
-            navigator.userAgent.match(/WPDesktop/i)
-          );
-        },
-        any: function () {
-          return (
-            isMobile.Android() ||
-            isMobile.BlackBerry() ||
-            isMobile.iOS() ||
-            isMobile.Opera() ||
-            isMobile.Windows()
-          );
-        },
-      };
-      if (isMobile.any()) {
-        alert("Mobile");
-        document
-          .getElementById("scale-station-title")
-          .setAttribute("hidden", "true");
-        document
-          .getElementById("scale-content")
-          .setAttribute("hidden", "false");
-      } else {
-        alert("Stationary");
-      }
-    </script>
   </head>
   <body>
     <h1>Wasserwaage</h1>
-    <div id="scale-station-title">
+    <div id="scaleStationTitle" style="margin-top: 10px">
       <p>
         Bitte besuche diese Webseite von einem Mobilgerät um dieses Feature zu
         nutzen.
@@ -83,8 +41,12 @@
     </div>
     <div
       id="scale-content"
-      style="width: 100%; height: 100%; background-color: lightblue"
-      hidden
+      style="
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+        display: none;
+      "
     >
       <button
         class="btn-success"
@@ -101,4 +63,39 @@
       </canvas>
     </div> -->
   </body>
+  <script>
+    var isMobile = {
+      Android: function () {
+        return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function () {
+        return (
+          navigator.userAgent.match(/IEMobile/i) ||
+          navigator.userAgent.match(/WPDesktop/i)
+        );
+      },
+      any: function () {
+        return (
+          isMobile.Android() ||
+          isMobile.BlackBerry() ||
+          isMobile.iOS() ||
+          isMobile.Opera() ||
+          isMobile.Windows()
+        );
+      },
+    };
+    if (isMobile.any()) {
+      document.getElementById("scaleStationTitle").style.display = "none";
+      document.getElementById("scale-content").style.display = "block";
+    }
+  </script>
 </html>
