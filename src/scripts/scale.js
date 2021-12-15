@@ -42,7 +42,6 @@ var vy = 0.0;
 var updateRate = 1 / 60; // Sensor refresh rate
 
 function orientationListener(event) {
-  alert("Moved!");
   // Expose each orientation angle in a more readable way
   rotation_degrees = event.alpha;
   frontToBack_degrees = event.beta;
