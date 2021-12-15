@@ -32,7 +32,7 @@ if (isMobile.any()) {
   document.getElementById("scale-content").style.display = "flex";
 }
 
-const SCALE_TOLERANCE = 20;
+const SCALE_TOLERANCE = 10;
 
 var px = 50; // Position x and y
 var py = 50;
@@ -79,9 +79,9 @@ function orientationListener(event) {
       "style",
       "left:" + px + "%;" + "top:" + py + "%; background-color: green;"
     );
-    alert(
-      `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`
-    );
+    // alert(
+    //   `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`
+    // );
   }
 }
 
