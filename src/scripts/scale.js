@@ -45,9 +45,6 @@ function orientationListener(event) {
   rotation_degrees = event.alpha;
   frontToBack_degrees = event.beta;
   leftToRight_degrees = event.gamma;
-  alert(
-    `front_back: ${frontToBack_degrees} \n left_right: ${leftToRight_degrees}`
-  );
 
   // Update velocity according to how tilted the phone is
   // Since phones are narrower than they are long, double the increase to the x velocity
