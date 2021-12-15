@@ -65,7 +65,7 @@ function orientationListener(event) {
   }
 
   dot = document.getElementsByClassName("indicatorDot")[0];
-  dot.setAttribute("style", "left:" + px + "%;" + "top:" + py + "%;");
+  dot.setAttribute("style", "left:" + vx + "%;" + "top:" + vy + "%;");
   center = document.getElementById("scaleCenter");
   var rect = center.getBoundingClientRect();
   var dotPos = dot.getBoundingClientRect();
