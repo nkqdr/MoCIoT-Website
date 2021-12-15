@@ -32,7 +32,7 @@ if (isMobile.any()) {
   document.getElementById("scale-content").style.display = "flex";
 }
 
-const SCALE_TOLERANCE = 10;
+const SCALE_TOLERANCE = 5;
 
 var px = 50; // Position x and y
 var py = 50;
@@ -75,7 +75,9 @@ function orientationListener(event) {
     Math.abs(rect.bottom - dotPos.bottom) < SCALE_TOLERANCE &&
     Math.abs(rect.left - dotPos.left) < SCALE_TOLERANCE
   ) {
-    alert(`Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left}`);
+    alert(
+      `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`
+    );
   }
 }
 
