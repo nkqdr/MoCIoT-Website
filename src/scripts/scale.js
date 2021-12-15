@@ -27,7 +27,14 @@ var isMobile = {
     );
   },
 };
-
+console.log(isMobile.any());
+if (isMobile.any()) {
+  document.getElementById("scaleStationTitle").style.display = "none";
+  document.getElementById("scale-content").style.display = "block";
+  alert("You're on a mobile device!");
+} else {
+  alert("You're on a desktop!");
+}
 var px = 50; // Position x and y
 var py = 50;
 var vx = 0.0; // Velocity x and y

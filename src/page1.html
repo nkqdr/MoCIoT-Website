@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
     <link rel="stylesheet" type="text/css" href="styles/scale.css" />
-    <script src="scripts/scale.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       crossorigin="anonymous"
@@ -57,17 +57,6 @@
       </button>
       <div class="indicatorDot" style="left: 30%; top: 30%"></div>
     </div>
-    <!-- <div class="canvas-wrapper">
-      <canvas id="myCanvas">
-        Sorry, your browser does not support HTML5 canvas technology.
-      </canvas>
-    </div> -->
   </body>
-  <script>
-    if (isMobile.any()) {
-      document.getElementById("scaleStationTitle").style.display = "none";
-      document.getElementById("scale-content").style.display = "block";
-      alert("You're on a mobile device!");
-    }
-  </script>
+  <script src="scripts/scale.js"></script>
 </html>
