@@ -75,6 +75,10 @@ function orientationListener(event) {
     Math.abs(rect.bottom - dotPos.bottom) < SCALE_TOLERANCE &&
     Math.abs(rect.left - dotPos.left) < SCALE_TOLERANCE
   ) {
+    dot.setAttribute(
+      "style",
+      "left:" + px + "%;" + "top:" + py + "%; background-color: green;"
+    );
     alert(
       `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`
     );

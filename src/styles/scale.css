@@ -23,7 +23,7 @@ html {
 .indicatorDot {
   width: 240px;
   height: 240px;
-  background-color: #ffab56;
+  background-color: red;
   border-radius: 50%;
   position: fixed;
 }
