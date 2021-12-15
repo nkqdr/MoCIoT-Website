@@ -77,7 +77,7 @@ function orientationListener(event) {
   ) {
     dot.setAttribute(
       "style",
-      "left:" + px + "%;" + "top:" + py + "%; background-color: green;"
+      "left:" + vx + "%;" + "top:" + vy + "%; background-color: green;"
     );
     // alert(
     //   `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`
