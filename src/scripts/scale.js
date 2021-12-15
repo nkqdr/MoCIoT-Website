@@ -95,10 +95,10 @@ function orientationListener(event) {
   ) {
     dot.setAttribute(
       "style",
-      "left: calc(50% - 120px + " +
+      "left: calc(50% - 120px - " +
         newPosX +
         "px);" +
-        "top: calc(40% + 5px + " +
+        "top: calc(40% + 5px - " +
         newPosY +
         "px); background-color: green;"
     );

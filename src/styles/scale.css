@@ -24,6 +24,7 @@ html {
   width: 240px;
   height: 240px;
   top: calc(40% + 5px);
+  transition: background-color 0.2s ease-in-out;
   background-color: red;
   border-radius: 50%;
   position: absolute;
