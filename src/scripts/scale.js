@@ -67,19 +67,24 @@ function orientationListener(event) {
     vy = 0;
   }
 
+  newPosY = frontToBack_degrees * 10;
+  if (newPosY > 100 || newPosY < -100) {
+    newPosY = Math.max(-100, Math.min(100, newPosY));
+  }
+  newPosX = leftToRight_degrees * 10;
+  if (newPosX > 100 || newPosX < -100) {
+    newPosX = Math.max(-100, Math.min(100, newPosX));
+  }
+
   dot = document.getElementsByClassName("indicatorDot")[0];
   dot.setAttribute(
     "style",
-    "left:" +
-      (50 + leftToRight_degrees) +
-      "%;" +
-      "top:" +
-      (50 + frontToBack_degrees) +
-      "%;"
+    "left:" + newPosX + "px;" + "top: calc(40% + 5px + " + newPosY + "px);"
   );
   center = document.getElementById("scaleCenter");
   var rect = center.getBoundingClientRect();
   var dotPos = dot.getBoundingClientRect();
+
   if (
     Math.abs(rect.top - dotPos.top) < SCALE_TOLERANCE &&
     Math.abs(rect.right - dotPos.right) < SCALE_TOLERANCE &&
@@ -89,11 +94,11 @@ function orientationListener(event) {
     dot.setAttribute(
       "style",
       "left:" +
-        (50 + leftToRight_degrees) +
-        "%;" +
-        "top:" +
-        (50 + frontToBack_degrees) +
-        "%; background-color: green;"
+        newPosX +
+        "px;" +
+        "top: calc(40% + 5px + " +
+        newPosY +
+        "px); background-color: green;"
     );
     // alert(
     //   `Center: ${rect.top}, ${rect.right}, ${rect.bottom}, ${rect.left} \n Dot: ${dotPos.top}, ${dotPos.right}, ${dotPos.bottom}, ${dotPos.left}`

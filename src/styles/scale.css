@@ -23,9 +23,10 @@ html {
 .indicatorDot {
   width: 240px;
   height: 240px;
+  top: calc(40% + 5px);
   background-color: red;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
 }
 
 .scale-content {
