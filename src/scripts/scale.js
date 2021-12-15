@@ -76,7 +76,7 @@ function orientationListener(event) {
   dot = document.getElementsByClassName("indicatorDot")[0];
   dot.setAttribute(
     "style",
-    "left: calc(50% + " +
+    "left: calc(50% - 120px + " +
       newPosX +
       "px);" +
       "top: calc(40% + 5px + " +
@@ -95,7 +95,7 @@ function orientationListener(event) {
   ) {
     dot.setAttribute(
       "style",
-      "left: calc(50% + " +
+      "left: calc(50% - 120px + " +
         newPosX +
         "px);" +
         "top: calc(40% + 5px + " +
