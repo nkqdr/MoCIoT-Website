@@ -76,7 +76,12 @@ function orientationListener(event) {
   dot = document.getElementsByClassName("indicatorDot")[0];
   dot.setAttribute(
     "style",
-    "left:" + newPosX + "px;" + "top: calc(40% + 5px + " + newPosY + "px);"
+    "left: calc(120px + " +
+      newPosX +
+      "px);" +
+      "top: calc(40% + 5px + " +
+      newPosY +
+      "px);"
   );
   center = document.getElementById("scaleCenter");
   var rect = center.getBoundingClientRect();
@@ -90,9 +95,9 @@ function orientationListener(event) {
   ) {
     dot.setAttribute(
       "style",
-      "left:" +
+      "left: calc(120px + " +
         newPosX +
-        "px;" +
+        "px);" +
         "top: calc(40% + 5px + " +
         newPosY +
         "px); background-color: green;"
