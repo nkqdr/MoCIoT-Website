@@ -52,13 +52,13 @@ function orientationListener(event) {
   vy = vy + frontToBack_degrees * updateRate;
 
   // Update position and clip it to bounds
-  px = px + vx * 0.2;
+  px = px + vx * 0.1;
   if (px > 50 || px < 0) {
     px = Math.max(0, Math.min(50, px)); // Clip px between 0-98
     vx = 0;
   }
 
-  py = py + vy * 0.2;
+  py = py + vy * 0.1;
   if (py > 70 || py < 0) {
     py = Math.max(0, Math.min(70, py)); // Clip py between 0-98
     vy = 0;
