@@ -29,7 +29,7 @@ var isMobile = {
 };
 if (isMobile.any()) {
   document.getElementById("scaleStationTitle").style.display = "none";
-  document.getElementById("scale-content").style.display = "block";
+  document.getElementById("scale-content").style.display = "flex";
 }
 
 var px = 50; // Position x and y
