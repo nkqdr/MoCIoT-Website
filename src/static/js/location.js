@@ -1,7 +1,3 @@
-function testButton() {
-  console.log("Clicked.");
-}
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -12,27 +8,6 @@ function getLocation() {
   } else {
     document.getElementById("page-content").innerHTML =
       "Geolocation is not supported by this browser.";
-  }
-}
-
-function setPage(index) {
-  var container = document.getElementById("page-root");
-  var links = document.getElementsByTagName("LI");
-  for (let item of links) {
-    if (item.id === `p${index}-link`) {
-      item.classList = ["active"];
-    } else {
-      item.classList = [];
-    }
-  }
-
-  switch (index) {
-    case 0:
-      container.src = "src/home.html";
-      break;
-    case 1:
-      container.src = "src/page1.html";
-      break;
   }
 }
 
@@ -61,8 +36,8 @@ function displayLocation(latitude, longitude) {
       var data = JSON.parse(request.responseText);
       var address = data.results[0];
       console.log(address);
-      document.getElementById("void-filler-text").hidden = true;
-      document.getElementById("location-title").hidden = false;
+      document.getElementById("page-content").hidden = false;
+      // document.getElementById("location-title").hidden = false;
       document.getElementById("location-content").innerHTML =
         address.formatted_address;
     }

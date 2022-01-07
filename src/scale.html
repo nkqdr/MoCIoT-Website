@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoCIoT</title>
-    <link rel="stylesheet" type="text/css" href="src/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/scale.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       crossorigin="anonymous"
@@ -16,6 +15,7 @@
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
     />
+
     <!-- Latest compiled and minified JavaScript -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
@@ -47,33 +47,38 @@
             <li id="p0-link">
               <a href="/src/location.html">Wo bin ich?</a>
             </li>
-            <li id="p1-link"><a href="/src/scale.html">Wasserwaage</a></li>
+            <li id="p1-link" class="active">
+              <a href="/src/scale.html">Wasserwaage</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="page-content-wrapper">
-      <h1>Willkommen auf der Internetseite von Niklas Kuder!</h1>
-      <h5>
-        Diese Seite wurde im Rahmen der Mobile Computing und Internet of Things
-        Vorlesung entwickelt.
-      </h5>
-      <div class="project-description-wrapper">
-        <p>Die folgenden Projekte wurden hier implementiert:</p>
-        <ul>
-          <li><strong>Wo bin ich?</strong></li>
-          <p>
-            Ein kleines Tool, welches den Standort des Gerätes benutzt um eine
-            Google-API anzusprechen und die aktuelle Adresse auszugeben.
-          </p>
-          <li><strong>Wasserwaage</strong></li>
-          <p>
-            Die Wasserwaage funktioniert aus offensichtlichen Gründen nur auf
-            Mobilgeräten. Hier wird das Gyroskop des Gerätes benutzt um die
-            Neigung herauszufinden.
-          </p>
-        </ul>
+    <div style="margin-bottom: 50px"></div>
+    <div>
+      <h1>Wasserwaage</h1>
+      <div id="scaleStationTitle" style="margin-top: 10px">
+        <p>
+          Bitte besuche diese Webseite von einem Mobilgerät um dieses Feature zu
+          nutzen.
+        </p>
+      </div>
+      <div
+        id="scale-content"
+        class="scale-content"
+        style="width: 100%; height: 100%"
+      >
+        <button
+          class="btn-success"
+          style="border-radius: 8px; margin-top: 40px"
+          onclick="getAccel()"
+        >
+          Bitte um Accelerometer Berechtigungen
+        </button>
+        <div id="scaleCenter" class="scale-circle"></div>
+        <div class="indicatorDot"></div>
       </div>
     </div>
   </body>
+  <script src="static/js/scale.js"></script>
 </html>

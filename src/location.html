@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <title>MoCIoT</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MoCIoT</title>
-    <link rel="stylesheet" type="text/css" href="src/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/location.css" />
+    <script src="static/js/location.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       crossorigin="anonymous"
@@ -44,7 +46,7 @@
           id="myNavbar"
         >
           <ul class="nav navbar-nav navbar-right">
-            <li id="p0-link">
+            <li id="p0-link" class="active">
               <a href="/src/location.html">Wo bin ich?</a>
             </li>
             <li id="p1-link"><a href="/src/scale.html">Wasserwaage</a></li>
@@ -52,27 +54,21 @@
         </div>
       </div>
     </nav>
-    <div class="page-content-wrapper">
-      <h1>Willkommen auf der Internetseite von Niklas Kuder!</h1>
-      <h5>
-        Diese Seite wurde im Rahmen der Mobile Computing und Internet of Things
-        Vorlesung entwickelt.
-      </h5>
-      <div class="project-description-wrapper">
-        <p>Die folgenden Projekte wurden hier implementiert:</p>
-        <ul>
-          <li><strong>Wo bin ich?</strong></li>
-          <p>
-            Ein kleines Tool, welches den Standort des Gerätes benutzt um eine
-            Google-API anzusprechen und die aktuelle Adresse auszugeben.
-          </p>
-          <li><strong>Wasserwaage</strong></li>
-          <p>
-            Die Wasserwaage funktioniert aus offensichtlichen Gründen nur auf
-            Mobilgeräten. Hier wird das Gyroskop des Gerätes benutzt um die
-            Neigung herauszufinden.
-          </p>
-        </ul>
+    <div class="page-content-wrapper location-content-wrapper">
+      <h1>Wo bin ich?</h1>
+      <div>
+        <button
+          class="btn-danger"
+          style="border-radius: 8px; margin-top: 40px"
+          onclick="getLocation()"
+        >
+          Klick mich und finde es heraus!
+        </button>
+      </div>
+      <div id="page-content" class="location-wrapper" hidden>
+        <!-- <h3 id="void-filler-text">Ich bin nur eine leere Box.</h3> -->
+        <h4 id="location-title">Du befindest dich hier:</h4>
+        <p id="location-content"></p>
       </div>
     </div>
   </body>
