@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <title>MoCIoT</title>
-    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/scale.css" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/balloon.css" />
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       crossorigin="anonymous"
@@ -16,7 +18,6 @@
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
     />
-
     <!-- Latest compiled and minified JavaScript -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
@@ -48,41 +49,28 @@
             <li id="p0-link">
               <a href="location.html">Wo bin ich?</a>
             </li>
-            <li id="p1-link" class="active">
-              <a href="scale.html">Wasserwaage</a>
-            </li>
-            <li id="p2-link">
+            <li id="p1-link"><a href="scale.html">Wasserwaage</a></li>
+            <li id="p2-link" class="active">
               <a href="balloon.html">Ballon</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div style="margin-bottom: 50px"></div>
-    <div>
-      <h1>Wasserwaage</h1>
-      <div id="scaleStationTitle" style="margin-top: 10px">
-        <p>
-          Bitte besuche diese Webseite von einem Mobilgerät um dieses Feature zu
-          nutzen.
-        </p>
-      </div>
-      <div
-        id="scale-content"
-        class="scale-content"
-        style="width: 100%; height: 100%"
+
+    <div class="page-content-wrapper balloon-content-wrapper">
+      <h1>Ballon aufpusten</h1>
+      <button
+        class="btn-danger"
+        style="border-radius: 8px; margin-top: 40px"
+        onclick="listenToMicrophone()"
       >
-        <button
-          class="btn-success"
-          style="border-radius: 8px; margin-top: 40px"
-          onclick="getAccel()"
-        >
-          Bitte um Accelerometer Berechtigungen
-        </button>
-        <div id="scaleCenter" class="scale-circle"></div>
-        <div class="indicatorDot"></div>
+        Klicke hier um das Mikrofon zu aktivieren
+      </button>
+      <div class="balloon-wrapper">
+        <div id="balloon"></div>
       </div>
     </div>
   </body>
-  <script src="static/js/scale.js"></script>
+  <script src="static/js/balloon.js"></script>
 </html>

@@ -35,7 +35,7 @@ function displayLocation(latitude, longitude) {
     if (request.readyState == 4 && request.status == 200) {
       var data = JSON.parse(request.responseText);
       var address = data.results[0];
-      console.log(address);
+      //console.log(address);
       document.getElementById("page-content").hidden = false;
       // document.getElementById("location-title").hidden = false;
       document.getElementById("location-content").innerHTML =
